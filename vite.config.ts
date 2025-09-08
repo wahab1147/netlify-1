@@ -13,6 +13,16 @@ import { nextPublicProcessEnv } from './plugins/nextPublicProcessEnv';
 import { restart } from './plugins/restart';
 import { restartEnvFileChange } from './plugins/restartEnvFileChange';
 
+// vite.config.ts
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      external: ['@neondatabase/serverless']
+    }
+  }
+})
+
+
 export default defineConfig({
   // Keep them available via import.meta.env.NEXT_PUBLIC_*
   envPrefix: 'NEXT_PUBLIC_',
